@@ -1,16 +1,12 @@
 {
     "Params: bwameth with run_qualimap": {
         "content": [
-            51,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -22,25 +18,19 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "QUALIMAP_BAMQC": {
                     "qualimap": 2.3
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -48,7 +38,19 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -64,16 +66,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -247,7 +245,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -264,6 +261,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -277,6 +275,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/qualimap_coverage_histogram.txt",
@@ -293,7 +292,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -321,7 +319,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -349,7 +346,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -375,6 +371,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -397,13 +394,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "genome_results.txt:md5,1ee2e29ac41c2cd7e6a0f00741e8d16e",
                 "coverage_across_reference.txt:md5,c4c7f930ad577d15de1358226acab252",
                 "coverage_histogram.txt:md5,cddf42d662856425649c196c731f048b",
@@ -447,9 +444,10 @@
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_picard_dups.txt:md5,82eaab96189f22fd93db38bb516ba6a5",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,7dacf4d4e0d7d2d9a7205beecfa7125c",
                 "qualimap_coverage_histogram.txt:md5,c7c932e4d84b735bd434c1aaa713b6e6",
@@ -458,37 +456,21 @@
                 "qualimap_insert_size.txt:md5,f86cc9fe7a12af8f62f26312660e9225",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -497,23 +479,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:57:03.196291624"
+        "timestamp": "2025-12-04T10:49:57.004367"
     },
     "Params: bwameth with skip_deduplication": {
         "content": [
-            39,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -525,16 +503,10 @@
                     "methyldackel": "0.6.1"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -542,16 +514,32 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
                 "bwameth",
                 "bwameth/alignments",
                 "bwameth/alignments/Ecoli_10K_methylated.sorted.bam",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub1.sorted.bam",
+                "bwameth/alignments/SRR389222_sub1.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub2.sorted.bam",
+                "bwameth/alignments/SRR389222_sub2.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub3.sorted.bam",
+                "bwameth/alignments/SRR389222_sub3.sorted.bam.bai",
                 "bwameth/alignments/samtools_stats",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.flagstat",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.stats",
@@ -561,7 +549,6 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub2.stats",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
-                "bwameth/deduplicated",
                 "fastqc",
                 "fastqc/Ecoli_10K_methylated_1_fastqc.html",
                 "fastqc/Ecoli_10K_methylated_2_fastqc.html",
@@ -587,7 +574,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -604,6 +590,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -623,7 +610,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -645,7 +631,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -667,7 +652,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -687,6 +671,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -709,13 +694,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,48d2b9fa62581706d67b027138cff41e",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,a578019df62d8ae1e4976f20ac1c7993",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,b60c66a26f2c346cbb85fb59c8de392b",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,cf3e88bd028b048c6f6a416eacef6a1b",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,aa88f19284e63097e9abccac4d7c6669",
                 "SRR389222_sub1.sorted_CpG.bedGraph:md5,4475a9462ce86a019015b69b82a9d5a2",
                 "SRR389222_sub2.sorted_CpG.bedGraph:md5,18b8845d9d985d3c203ca6c9c40aab1b",
@@ -741,10 +726,10 @@
                 "multiqc_citations.txt:md5,ad6c1e326b4276501a3b42eaad747de1",
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
@@ -767,216 +752,13 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:53:30.114869782"
-    },
-    "Params: bwameth with CAT_FASTQ and skip_trimming and skip_deduplication": {
-        "content": [
-            20,
-            {
-                "BWAMETH_ALIGN": {
-                    "bwameth": "0.2.9"
-                },
-                "BWAMETH_INDEX": {
-                    "bwameth": "0.2.9"
-                },
-                "CAT_FASTQ": {
-                    "cat": 9.5
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
-                },
-                "GUNZIP": {
-                    "gunzip": 1.13
-                },
-                "METHYLDACKEL_EXTRACT": {
-                    "methyldackel": "0.6.1"
-                },
-                "METHYLDACKEL_MBIAS": {
-                    "methyldackel": "0.6.1"
-                },
-                "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
-                },
-                "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
-                }
-            },
-            [
-                "bwameth",
-                "bwameth/alignments",
-                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam",
-                "bwameth/alignments/SRR389222.sorted.bam",
-                "bwameth/alignments/samtools_stats",
-                "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.flagstat",
-                "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.stats",
-                "bwameth/alignments/samtools_stats/SRR389222.flagstat",
-                "bwameth/alignments/samtools_stats/SRR389222.stats",
-                "bwameth/deduplicated",
-                "cat",
-                "cat/SRR389222.merged.fastq.gz",
-                "fastqc",
-                "fastqc/Ecoli_10K_methylated_1_fastqc.html",
-                "fastqc/Ecoli_10K_methylated_2_fastqc.html",
-                "fastqc/SRR389222_fastqc.html",
-                "fastqc/zips",
-                "fastqc/zips/Ecoli_10K_methylated_1_fastqc.zip",
-                "fastqc/zips/Ecoli_10K_methylated_2_fastqc.zip",
-                "fastqc/zips/SRR389222_fastqc.zip",
-                "methyldackel",
-                "methyldackel/Ecoli_10K_methylated.sorted_CpG.bedGraph",
-                "methyldackel/SRR389222.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
-                "methyldackel/mbias/SRR389222.mbias.txt",
-                "multiqc",
-                "multiqc/bwameth",
-                "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
-                "multiqc/bwameth/multiqc_data/fastqc-status-check-heatmap.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_adapter_content_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_overrepresented_sequences_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_per_base_n_content_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_per_base_sequence_quality_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_sequence_counts_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_sequence_duplication_levels_plot.txt",
-                "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
-                "multiqc/bwameth/multiqc_data/llms-full.txt",
-                "multiqc/bwameth/multiqc_data/multiqc.log",
-                "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_data.json",
-                "multiqc/bwameth/multiqc_data/multiqc_fastqc.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_general_stats.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_samtools_flagstat.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_samtools_stats.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_software_versions.txt",
-                "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
-                "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
-                "multiqc/bwameth/multiqc_data/samtools-flagstat-table.txt",
-                "multiqc/bwameth/multiqc_data/samtools-stats-dp.txt",
-                "multiqc/bwameth/multiqc_data/samtools_alignment_plot.txt",
-                "multiqc/bwameth/multiqc_plots",
-                "multiqc/bwameth/multiqc_plots/pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_sequence_quality_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_gc_content_plot_Counts.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_gc_content_plot_Percentages.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_quality_scores_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_counts_plot-cnt.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_counts_plot-pct.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_duplication_levels_plot.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc_top_overrepresented_sequences_table.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/samtools-flagstat-pct-table.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/samtools-flagstat-table.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/samtools-stats-dp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-cnt.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-pct.pdf",
-                "multiqc/bwameth/multiqc_plots/png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_sequence_quality_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_gc_content_plot_Counts.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_gc_content_plot_Percentages.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_quality_scores_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_counts_plot-cnt.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_counts_plot-pct.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_duplication_levels_plot.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc_top_overrepresented_sequences_table.png",
-                "multiqc/bwameth/multiqc_plots/png/samtools-flagstat-pct-table.png",
-                "multiqc/bwameth/multiqc_plots/png/samtools-flagstat-table.png",
-                "multiqc/bwameth/multiqc_plots/png/samtools-stats-dp.png",
-                "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-cnt.png",
-                "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-pct.png",
-                "multiqc/bwameth/multiqc_plots/svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_sequence_quality_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_gc_content_plot_Counts.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_gc_content_plot_Percentages.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_quality_scores_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_counts_plot-cnt.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_counts_plot-pct.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_duplication_levels_plot.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc_top_overrepresented_sequences_table.svg",
-                "multiqc/bwameth/multiqc_plots/svg/samtools-flagstat-pct-table.svg",
-                "multiqc/bwameth/multiqc_plots/svg/samtools-flagstat-table.svg",
-                "multiqc/bwameth/multiqc_plots/svg/samtools-stats-dp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/samtools_alignment_plot-cnt.svg",
-                "multiqc/bwameth/multiqc_plots/svg/samtools_alignment_plot-pct.svg",
-                "multiqc/bwameth/multiqc_report.html",
-                "pipeline_info",
-                "pipeline_info/nf_core_methylseq_software_mqc_versions.yml"
-            ],
-            [
-                "Ecoli_10K_methylated.flagstat:md5,7c3bae0f9c700dde88785a7e94c6ae2c",
-                "Ecoli_10K_methylated.stats:md5,9edddeee18b48d32e6f0784180af3655",
-                "SRR389222.flagstat:md5,a90f1bdcb30f4d0597ccf69fe0b37b1f",
-                "SRR389222.stats:md5,ff112795ace81e3e93cd3e4b42466a7a",
-                "SRR389222.merged.fastq.gz:md5,47e1d7461d511a970e80085dd6454775",
-                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,3656c54896013b76de978ab95c3f5975",
-                "SRR389222.sorted_CpG.bedGraph:md5,a754358e8b95db30602aa29835a896bd",
-                "Ecoli_10K_methylated.mbias.txt:md5,ec13da6deba1ce147624bce065ec5df6",
-                "SRR389222.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
-                "fastqc-status-check-heatmap.txt:md5,04ba1bfaa7df8fb71d5a058e2463029f",
-                "fastqc_adapter_content_plot.txt:md5,48d8bd5ece984a74972ce0a0e814dd07",
-                "fastqc_overrepresented_sequences_plot.txt:md5,a94413e4d294e8161658bb5593387edb",
-                "fastqc_per_base_n_content_plot.txt:md5,35a2ea915454dffa9c49c9de3c64d9e2",
-                "fastqc_per_base_sequence_quality_plot.txt:md5,62d571e9630a013069ceaf04e57575c8",
-                "fastqc_per_sequence_gc_content_plot_Counts.txt:md5,f6875166fc8698a3c9be67ee4a6c901b",
-                "fastqc_per_sequence_gc_content_plot_Percentages.txt:md5,f1728b050adcecaea15150839d588147",
-                "fastqc_per_sequence_quality_scores_plot.txt:md5,f561d95db7dcaf6bf694e319cf45b98d",
-                "fastqc_sequence_counts_plot.txt:md5,33099ff26b32a6906c63c4cc1f113b33",
-                "fastqc_sequence_duplication_levels_plot.txt:md5,3c08938b1fd0e2add3d43ab80e77e234",
-                "fastqc_top_overrepresented_sequences_table.txt:md5,773be2a83a2e566f1b1820e45071bb02",
-                "multiqc_citations.txt:md5,ee1baba4adea57b43a9ae59ce7e1dd7f",
-                "multiqc_samtools_flagstat.txt:md5,1b1334c82b33c933faffd61e41ab5a89",
-                "multiqc_samtools_stats.txt:md5,96cdf5666d7804cb43201ad661293d4c",
-                "samtools-flagstat-pct-table.txt:md5,87680f6ccb06edba6b75236eed4a7320",
-                "samtools-flagstat-table.txt:md5,f757c55b3b0dedfbde58086dd09cd2f2",
-                "samtools-stats-dp.txt:md5,0e448f198b0ad0efd2b19fb55c48daa1",
-                "samtools_alignment_plot.txt:md5,e2c576d011f363417fb894279d43d5b9"
-            ],
-            [
-                [
-                    "Ecoli_10K_methylated.sorted.bam",
-                    "5b485bcabdb1ad5955cfa061741fad31"
-                ],
-                [
-                    "SRR389222.sorted.bam",
-                    "58e56b24ab2e33a41b7753fbe9c2b1e6"
-                ]
-            ]
-        ],
-        "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
-        },
-        "timestamp": "2025-08-10T07:00:11.007344079"
+        "timestamp": "2025-12-07T11:13:18.080193"
     },
     "Params: bwameth with skip_fastqc": {
         "content": [
-            43,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
@@ -994,22 +776,16 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -1017,7 +793,16 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -1033,16 +818,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -1063,12 +844,12 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -1080,6 +861,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
@@ -1126,6 +908,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -1148,13 +931,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
                 "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
                 "SRR389222_sub2.markdup.sorted_CpG.bedGraph:md5,0a3c19af55d1625e91903ae25d1d2098",
@@ -1170,44 +953,29 @@
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_picard_dups.txt:md5,82eaab96189f22fd93db38bb516ba6a5",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,7dacf4d4e0d7d2d9a7205beecfa7125c",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -1216,14 +984,13 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:58:10.796198111"
+        "timestamp": "2025-12-04T10:51:08.552779"
     },
-    "Params: bwameth": {
+    "Params: bwameth with CAT_FASTQ and skip_trimming and skip_deduplication": {
         "content": [
-            47,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
@@ -1231,8 +998,208 @@
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
                 },
+                "CAT_FASTQ": {
+                    "cat": 9.5
+                },
+                "GUNZIP": {
+                    "gunzip": 1.13
+                },
+                "METHYLDACKEL_EXTRACT": {
+                    "methyldackel": "0.6.1"
+                },
+                "METHYLDACKEL_MBIAS": {
+                    "methyldackel": "0.6.1"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_INDEX_ALIGNMENTS": {
+                    "samtools": "1.22.1"
+                },
+                "Workflow": {
+                    "nf-core/methylseq": "v4.2.0"
+                },
                 "FASTQC": {
                     "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
+                }
+            },
+            [
+                "bwameth",
+                "bwameth/alignments",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam.bai",
+                "bwameth/alignments/SRR389222.sorted.bam",
+                "bwameth/alignments/SRR389222.sorted.bam.bai",
+                "bwameth/alignments/samtools_stats",
+                "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.flagstat",
+                "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.stats",
+                "bwameth/alignments/samtools_stats/SRR389222.flagstat",
+                "bwameth/alignments/samtools_stats/SRR389222.stats",
+                "cat",
+                "cat/SRR389222.merged.fastq.gz",
+                "fastqc",
+                "fastqc/Ecoli_10K_methylated_1_fastqc.html",
+                "fastqc/Ecoli_10K_methylated_2_fastqc.html",
+                "fastqc/SRR389222_fastqc.html",
+                "fastqc/zips",
+                "fastqc/zips/Ecoli_10K_methylated_1_fastqc.zip",
+                "fastqc/zips/Ecoli_10K_methylated_2_fastqc.zip",
+                "fastqc/zips/SRR389222_fastqc.zip",
+                "methyldackel",
+                "methyldackel/Ecoli_10K_methylated.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222.sorted_CpG.bedGraph",
+                "methyldackel/mbias",
+                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
+                "methyldackel/mbias/SRR389222.mbias.txt",
+                "multiqc",
+                "multiqc/bwameth",
+                "multiqc/bwameth/multiqc_data",
+                "multiqc/bwameth/multiqc_data/fastqc-status-check-heatmap.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_adapter_content_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_overrepresented_sequences_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_per_base_n_content_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_per_base_sequence_quality_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_sequence_counts_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_sequence_duplication_levels_plot.txt",
+                "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
+                "multiqc/bwameth/multiqc_data/llms-full.txt",
+                "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
+                "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_data.json",
+                "multiqc/bwameth/multiqc_data/multiqc_fastqc.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_general_stats.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_samtools_flagstat.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_samtools_stats.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_software_versions.txt",
+                "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
+                "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
+                "multiqc/bwameth/multiqc_data/samtools-flagstat-table.txt",
+                "multiqc/bwameth/multiqc_data/samtools-stats-dp.txt",
+                "multiqc/bwameth/multiqc_data/samtools_alignment_plot.txt",
+                "multiqc/bwameth/multiqc_plots",
+                "multiqc/bwameth/multiqc_plots/pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_sequence_quality_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_gc_content_plot_Counts.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_gc_content_plot_Percentages.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_sequence_quality_scores_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_counts_plot-cnt.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_counts_plot-pct.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_sequence_duplication_levels_plot.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/fastqc_top_overrepresented_sequences_table.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/samtools-flagstat-pct-table.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/samtools-flagstat-table.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/samtools-stats-dp.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-cnt.pdf",
+                "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-pct.pdf",
+                "multiqc/bwameth/multiqc_plots/png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_sequence_quality_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_gc_content_plot_Counts.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_gc_content_plot_Percentages.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_per_sequence_quality_scores_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_counts_plot-cnt.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_counts_plot-pct.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_sequence_duplication_levels_plot.png",
+                "multiqc/bwameth/multiqc_plots/png/fastqc_top_overrepresented_sequences_table.png",
+                "multiqc/bwameth/multiqc_plots/png/samtools-flagstat-pct-table.png",
+                "multiqc/bwameth/multiqc_plots/png/samtools-flagstat-table.png",
+                "multiqc/bwameth/multiqc_plots/png/samtools-stats-dp.png",
+                "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-cnt.png",
+                "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-pct.png",
+                "multiqc/bwameth/multiqc_plots/svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_sequence_quality_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_gc_content_plot_Counts.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_gc_content_plot_Percentages.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_per_sequence_quality_scores_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_counts_plot-cnt.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_counts_plot-pct.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_sequence_duplication_levels_plot.svg",
+                "multiqc/bwameth/multiqc_plots/svg/fastqc_top_overrepresented_sequences_table.svg",
+                "multiqc/bwameth/multiqc_plots/svg/samtools-flagstat-pct-table.svg",
+                "multiqc/bwameth/multiqc_plots/svg/samtools-flagstat-table.svg",
+                "multiqc/bwameth/multiqc_plots/svg/samtools-stats-dp.svg",
+                "multiqc/bwameth/multiqc_plots/svg/samtools_alignment_plot-cnt.svg",
+                "multiqc/bwameth/multiqc_plots/svg/samtools_alignment_plot-pct.svg",
+                "multiqc/bwameth/multiqc_report.html",
+                "pipeline_info",
+                "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml"
+            ],
+            [
+                "Ecoli_10K_methylated.flagstat:md5,7c3bae0f9c700dde88785a7e94c6ae2c",
+                "Ecoli_10K_methylated.stats:md5,0b2637c18e999db79658704acaba7487",
+                "SRR389222.flagstat:md5,a90f1bdcb30f4d0597ccf69fe0b37b1f",
+                "SRR389222.stats:md5,21329758b4f94d15e393ef57e20707c9",
+                "SRR389222.merged.fastq.gz:md5,47e1d7461d511a970e80085dd6454775",
+                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,3656c54896013b76de978ab95c3f5975",
+                "SRR389222.sorted_CpG.bedGraph:md5,a754358e8b95db30602aa29835a896bd",
+                "Ecoli_10K_methylated.mbias.txt:md5,ec13da6deba1ce147624bce065ec5df6",
+                "SRR389222.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
+                "fastqc-status-check-heatmap.txt:md5,04ba1bfaa7df8fb71d5a058e2463029f",
+                "fastqc_adapter_content_plot.txt:md5,48d8bd5ece984a74972ce0a0e814dd07",
+                "fastqc_overrepresented_sequences_plot.txt:md5,a94413e4d294e8161658bb5593387edb",
+                "fastqc_per_base_n_content_plot.txt:md5,35a2ea915454dffa9c49c9de3c64d9e2",
+                "fastqc_per_base_sequence_quality_plot.txt:md5,62d571e9630a013069ceaf04e57575c8",
+                "fastqc_per_sequence_gc_content_plot_Counts.txt:md5,f6875166fc8698a3c9be67ee4a6c901b",
+                "fastqc_per_sequence_gc_content_plot_Percentages.txt:md5,f1728b050adcecaea15150839d588147",
+                "fastqc_per_sequence_quality_scores_plot.txt:md5,f561d95db7dcaf6bf694e319cf45b98d",
+                "fastqc_sequence_counts_plot.txt:md5,33099ff26b32a6906c63c4cc1f113b33",
+                "fastqc_sequence_duplication_levels_plot.txt:md5,3c08938b1fd0e2add3d43ab80e77e234",
+                "fastqc_top_overrepresented_sequences_table.txt:md5,773be2a83a2e566f1b1820e45071bb02",
+                "multiqc_citations.txt:md5,ee1baba4adea57b43a9ae59ce7e1dd7f",
+                "multiqc_samtools_flagstat.txt:md5,1b1334c82b33c933faffd61e41ab5a89",
+                "multiqc_samtools_stats.txt:md5,0e83cabb41f304d79e7f45ca70a514cd",
+                "samtools-flagstat-pct-table.txt:md5,87680f6ccb06edba6b75236eed4a7320",
+                "samtools-flagstat-table.txt:md5,f757c55b3b0dedfbde58086dd09cd2f2",
+                "samtools-stats-dp.txt:md5,00c8f177ffd541d0b147be5645484a89",
+                "samtools_alignment_plot.txt:md5,e2c576d011f363417fb894279d43d5b9"
+            ],
+            [
+                [
+                    "Ecoli_10K_methylated.sorted.bam",
+                    "5b485bcabdb1ad5955cfa061741fad31"
+                ],
+                [
+                    "SRR389222.sorted.bam",
+                    "58e56b24ab2e33a41b7753fbe9c2b1e6"
+                ]
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
+        },
+        "timestamp": "2025-12-07T11:20:38.501885"
+    },
+    "Params: bwameth": {
+        "content": [
+            {
+                "BWAMETH_ALIGN": {
+                    "bwameth": "0.2.9"
+                },
+                "BWAMETH_INDEX": {
+                    "bwameth": "0.2.9"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -1244,22 +1211,16 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -1267,7 +1228,19 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -1283,16 +1256,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -1325,7 +1294,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -1342,6 +1310,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -1354,6 +1323,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
@@ -1366,7 +1336,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -1390,7 +1359,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -1414,7 +1382,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -1436,6 +1403,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -1458,13 +1426,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
                 "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
                 "SRR389222_sub2.markdup.sorted_CpG.bedGraph:md5,0a3c19af55d1625e91903ae25d1d2098",
@@ -1491,44 +1459,29 @@
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_picard_dups.txt:md5,82eaab96189f22fd93db38bb516ba6a5",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,7dacf4d4e0d7d2d9a7205beecfa7125c",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -1537,23 +1490,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:50:11.948166356"
+        "timestamp": "2025-12-04T10:41:44.414841"
     },
     "Params: bwameth with skip_multiqc": {
         "content": [
-            46,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -1565,22 +1514,16 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -1588,7 +1531,16 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -1604,16 +1556,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -1645,6 +1593,7 @@
                 "methyldackel/mbias/SRR389222_sub3.mbias.txt",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -1667,13 +1616,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
                 "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
                 "SRR389222_sub2.markdup.sorted_CpG.bedGraph:md5,0a3c19af55d1625e91903ae25d1d2098",
@@ -1685,32 +1634,16 @@
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -1719,23 +1652,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:59:10.460627054"
+        "timestamp": "2025-12-04T10:52:27.013821"
     },
     "Params: bwameth with skip_trimming": {
         "content": [
-            43,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -1747,25 +1676,31 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -1781,16 +1716,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -1823,7 +1754,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/fastqc-status-check-heatmap.txt",
                 "multiqc/bwameth/multiqc_data/fastqc_adapter_content_plot.txt",
                 "multiqc/bwameth/multiqc_data/fastqc_overrepresented_sequences_plot.txt",
@@ -1837,6 +1767,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
                 "multiqc/bwameth/multiqc_data/multiqc_fastqc.txt",
@@ -1848,6 +1779,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
@@ -1856,7 +1788,6 @@
                 "multiqc/bwameth/multiqc_data/samtools_alignment_plot.txt",
                 "multiqc/bwameth/multiqc_plots",
                 "multiqc/bwameth/multiqc_plots/pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -1876,7 +1807,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-cnt.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/samtools_alignment_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -1896,7 +1826,6 @@
                 "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-cnt.png",
                 "multiqc/bwameth/multiqc_plots/png/samtools_alignment_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -1917,17 +1846,18 @@
                 "multiqc/bwameth/multiqc_plots/svg/samtools_alignment_plot-pct.svg",
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
-                "pipeline_info/nf_core_methylseq_software_mqc_versions.yml"
+                "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml"
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,7c3bae0f9c700dde88785a7e94c6ae2c",
-                "Ecoli_10K_methylated.stats:md5,920027e64f96196193a9c585431f3edb",
+                "Ecoli_10K_methylated.stats:md5,0b2637c18e999db79658704acaba7487",
                 "SRR389222_sub1.flagstat:md5,897d500a710a56a7098172167fa71108",
-                "SRR389222_sub1.stats:md5,ca9d535c6181d1f1b60172eb81f03061",
+                "SRR389222_sub1.stats:md5,96ff5c683aed6e243cf451994e47e88d",
                 "SRR389222_sub2.flagstat:md5,37d33d68b31d4550620dc17582a3a750",
-                "SRR389222_sub2.stats:md5,d38aa6d840e3af9d3c010cf788f8388b",
+                "SRR389222_sub2.stats:md5,8ab151baed3d6787d212e65c819bd51f",
                 "SRR389222_sub3.flagstat:md5,e3e925a7b7356e93d14f5e9e102c55b7",
-                "SRR389222_sub3.stats:md5,a29f5a125fd90c5ba3d2e1100f33883c",
+                "SRR389222_sub3.stats:md5,cd1b0557ab452a7672c89790caf43e0d",
                 "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,b43c4c8ff346ae865b2b5db996650942",
                 "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
                 "SRR389222_sub2.markdup.sorted_CpG.bedGraph:md5,0a3c19af55d1625e91903ae25d1d2098",
@@ -1950,44 +1880,29 @@
                 "multiqc_citations.txt:md5,ee1baba4adea57b43a9ae59ce7e1dd7f",
                 "multiqc_picard_dups.txt:md5,2dd92451825bab5f1d74bd96933756e6",
                 "multiqc_samtools_flagstat.txt:md5,707a91291107beffe14f9cc2d540f4a0",
-                "multiqc_samtools_stats.txt:md5,3204ba68269a14b7eab35154218f5dcc",
+                "multiqc_samtools_stats.txt:md5,167fb5dd66722a7b151a77b801ca9495",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,b86a20261610bdf7a2e63ff43e232c75",
                 "samtools-flagstat-pct-table.txt:md5,a7305ce09c632ddb903a0fe89306f98f",
                 "samtools-flagstat-table.txt:md5,2d5434b646dac99397d86bd31731df01",
-                "samtools-stats-dp.txt:md5,e1290c4b0ad11142147f69f4256c4524",
+                "samtools-stats-dp.txt:md5,c7b063d5bcaeec9d5cbcfa7a6e945c31",
                 "samtools_alignment_plot.txt:md5,fe4c9af19d69c3982b75ad458a1a9148"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "5b485bcabdb1ad5955cfa061741fad31"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "5b485bcabdb1ad5955cfa061741fad31"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "37ec1c6338cc3fee7ab1cb2d48dba38"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "37ec1c6338cc3fee7ab1cb2d48dba38"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "783d3be6b5bfa58142c3dbe864f6d8c5"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "783d3be6b5bfa58142c3dbe864f6d8c5"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "4bbaef9917f4ff0248d1f5853f583fd0"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -1996,23 +1911,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:52:30.254111637"
+        "timestamp": "2025-12-04T10:44:28.215245"
     },
     "Params: bwameth with mem2 index": {
         "content": [
-            47,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -2024,22 +1935,16 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -2047,7 +1952,19 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
@@ -2063,16 +1980,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -2105,7 +2018,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -2122,6 +2034,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -2134,6 +2047,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
@@ -2146,7 +2060,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -2170,7 +2083,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -2194,7 +2106,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -2216,6 +2127,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -2238,13 +2150,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
                 "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
                 "SRR389222_sub2.markdup.sorted_CpG.bedGraph:md5,0a3c19af55d1625e91903ae25d1d2098",
@@ -2271,44 +2183,29 @@
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_picard_dups.txt:md5,82eaab96189f22fd93db38bb516ba6a5",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,7dacf4d4e0d7d2d9a7205beecfa7125c",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
-                ],
-                [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -2317,23 +2214,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:51:24.757763959"
+        "timestamp": "2025-12-04T10:43:13.595208"
     },
     "Params: bwameth with save_reference and save_align_intermeds": {
         "content": [
-            47,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -2345,22 +2238,16 @@
                     "methyldackel": "0.6.1"
                 },
                 "PICARD_MARKDUPLICATES": {
-                    "picard": "3.3.0"
+                    "picard": "3.4.0"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_DEDUPLICATED": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -2368,24 +2255,36 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
                 "bwameth",
                 "bwameth/alignments",
                 "bwameth/alignments/Ecoli_10K_methylated.bam",
-                "bwameth/alignments/Ecoli_10K_methylated.deduplicated.sorted.bam",
-                "bwameth/alignments/Ecoli_10K_methylated.deduplicated.sorted.bam.bai",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub1.bam",
-                "bwameth/alignments/SRR389222_sub1.deduplicated.sorted.bam",
-                "bwameth/alignments/SRR389222_sub1.deduplicated.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub1.sorted.bam",
+                "bwameth/alignments/SRR389222_sub1.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub2.bam",
-                "bwameth/alignments/SRR389222_sub2.deduplicated.sorted.bam",
-                "bwameth/alignments/SRR389222_sub2.deduplicated.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub2.sorted.bam",
+                "bwameth/alignments/SRR389222_sub2.sorted.bam.bai",
                 "bwameth/alignments/SRR389222_sub3.bam",
-                "bwameth/alignments/SRR389222_sub3.deduplicated.sorted.bam",
-                "bwameth/alignments/SRR389222_sub3.deduplicated.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub3.sorted.bam",
+                "bwameth/alignments/SRR389222_sub3.sorted.bam.bai",
                 "bwameth/alignments/samtools_stats",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.flagstat",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.stats",
@@ -2396,16 +2295,12 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
                 "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam",
                 "bwameth/deduplicated/Ecoli_10K_methylated.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub1.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub2.markdup.sorted.bam.bai",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam",
                 "bwameth/deduplicated/SRR389222_sub3.markdup.sorted.bam.bai",
                 "bwameth/deduplicated/picard_metrics",
@@ -2446,7 +2341,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -2463,6 +2357,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -2475,6 +2370,7 @@
                 "multiqc/bwameth/multiqc_data/multiqc_sources.txt",
                 "multiqc/bwameth/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/bwameth/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
                 "multiqc/bwameth/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
                 "multiqc/bwameth/multiqc_data/picard_deduplication.txt",
                 "multiqc/bwameth/multiqc_data/samtools-flagstat-pct-table.txt",
@@ -2487,7 +2383,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -2511,7 +2406,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -2535,7 +2429,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -2557,6 +2450,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -2579,13 +2473,13 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,f520e87cc4050799a0dbed72909572ec",
-                "Ecoli_10K_methylated.stats:md5,be3e2bea0d6867aab35d06bfbdae0aa2",
+                "Ecoli_10K_methylated.stats:md5,4dd1be7514d159967c5b91866a980655",
                 "SRR389222_sub1.flagstat:md5,ad8159a7683b9c3057bf54ccb77a2ddc",
-                "SRR389222_sub1.stats:md5,21e116cc6374c4a2d55d2c383cd4281e",
+                "SRR389222_sub1.stats:md5,638e03d7a02d8e7ce8694aab73f1e163",
                 "SRR389222_sub2.flagstat:md5,e768b4f54014d62b096152c44f920bc1",
-                "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
+                "SRR389222_sub2.stats:md5,43352aa3930321f587adf80b38d25cef",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
-                "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
+                "SRR389222_sub3.stats:md5,470b6040d2b5832bd34989837c47a3e6",
                 "genome.fa.bwameth.c2t:md5,e51d48ed28fa0c26e2f9c9f13d09403b",
                 "genome.fa.bwameth.c2t.amb:md5,010a242c6764efb30141868a45d698b3",
                 "genome.fa.bwameth.c2t.ann:md5,09b4db3d87a2d4dac9e10e807f377110",
@@ -2618,14 +2512,15 @@
                 "multiqc_cutadapt.txt:md5,883891ac4901385102be053212068732",
                 "multiqc_picard_dups.txt:md5,82eaab96189f22fd93db38bb516ba6a5",
                 "multiqc_samtools_flagstat.txt:md5,a8f5b45b8b3412a9adc3dd0d35208c73",
-                "multiqc_samtools_stats.txt:md5,f02f83f3df9208d616fda7a8609b2853",
+                "multiqc_samtools_stats.txt:md5,edac97e95c57ea6276d3b3801ed732a8",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_deduplication.txt:md5,7dacf4d4e0d7d2d9a7205beecfa7125c",
                 "samtools-flagstat-pct-table.txt:md5,ff5d65a480449ba98587c43f3a2bd33e",
                 "samtools-flagstat-table.txt:md5,6a5332e2ad59f7da00b5a9a1a25fd2f8",
-                "samtools-stats-dp.txt:md5,52021b9a9455b39b39dd357bc2e8d346",
+                "samtools-stats-dp.txt:md5,2c5b19dc795bc5d4a1dbd52660aae4b9",
                 "samtools_alignment_plot.txt:md5,39f42e039f96cc2b17248b44ccaf425b"
             ],
             [
@@ -2634,7 +2529,7 @@
                     "4a9ba2169facef4ed3d92d539c8c78af"
                 ],
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
+                    "Ecoli_10K_methylated.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
                 ],
                 [
@@ -2642,7 +2537,7 @@
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
+                    "SRR389222_sub1.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
@@ -2650,7 +2545,7 @@
                     "d365b8b2662b2abffb51dd67a1f463b4"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
+                    "SRR389222_sub2.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
                 ],
                 [
@@ -2658,36 +2553,20 @@
                     "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
+                    "SRR389222_sub3.sorted.bam",
                     "a9fd2900b9d759f8f4f62cbbb2744fde"
-                ],
-                [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
-                    "a2921f761f431ede522016f83f75c12d"
                 ],
                 [
                     "Ecoli_10K_methylated.markdup.sorted.bam",
                     "a2921f761f431ede522016f83f75c12d"
                 ],
                 [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
-                    "e50275d6d44138f19d65ee479444d5ce"
-                ],
-                [
                     "SRR389222_sub1.markdup.sorted.bam",
                     "e50275d6d44138f19d65ee479444d5ce"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
-                    "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
                     "SRR389222_sub2.markdup.sorted.bam",
                     "d365b8b2662b2abffb51dd67a1f463b4"
-                ],
-                [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
-                    "a9fd2900b9d759f8f4f62cbbb2744fde"
                 ],
                 [
                     "SRR389222_sub3.markdup.sorted.bam",
@@ -2696,23 +2575,19 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:55:41.943039833"
+        "timestamp": "2025-12-04T10:48:17.999837"
     },
     "Params: bwameth with rrbs": {
         "content": [
-            39,
             {
                 "BWAMETH_ALIGN": {
                     "bwameth": "0.2.9"
                 },
                 "BWAMETH_INDEX": {
                     "bwameth": "0.2.9"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
                 },
                 "GUNZIP": {
                     "gunzip": 1.13
@@ -2724,16 +2599,10 @@
                     "methyldackel": "0.6.1"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX_ALIGNMENTS": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": 1.21
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "TRIMGALORE": {
                     "trimgalore": "0.6.10",
@@ -2741,12 +2610,32 @@
                     "pigz": 2.8
                 },
                 "Workflow": {
-                    "nf-core/methylseq": "v4.1.0"
+                    "nf-core/methylseq": "v4.2.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "MULTIQC": {
+                    "multiqc": 1.32
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.22.1"
                 }
             },
             [
                 "bwameth",
                 "bwameth/alignments",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam",
+                "bwameth/alignments/Ecoli_10K_methylated.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub1.sorted.bam",
+                "bwameth/alignments/SRR389222_sub1.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub2.sorted.bam",
+                "bwameth/alignments/SRR389222_sub2.sorted.bam.bai",
+                "bwameth/alignments/SRR389222_sub3.sorted.bam",
+                "bwameth/alignments/SRR389222_sub3.sorted.bam.bai",
                 "bwameth/alignments/samtools_stats",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.flagstat",
                 "bwameth/alignments/samtools_stats/Ecoli_10K_methylated.stats",
@@ -2756,11 +2645,6 @@
                 "bwameth/alignments/samtools_stats/SRR389222_sub2.stats",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.flagstat",
                 "bwameth/alignments/samtools_stats/SRR389222_sub3.stats",
-                "bwameth/deduplicated",
-                "bwameth/deduplicated/Ecoli_10K_methylated.deduplicated.sorted.bam",
-                "bwameth/deduplicated/SRR389222_sub1.deduplicated.sorted.bam",
-                "bwameth/deduplicated/SRR389222_sub2.deduplicated.sorted.bam",
-                "bwameth/deduplicated/SRR389222_sub3.deduplicated.sorted.bam",
                 "fastqc",
                 "fastqc/Ecoli_10K_methylated_1_fastqc.html",
                 "fastqc/Ecoli_10K_methylated_2_fastqc.html",
@@ -2774,10 +2658,10 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/Ecoli_10K_methylated.deduplicated.sorted_CpG.bedGraph",
-                "methyldackel/SRR389222_sub1.deduplicated.sorted_CpG.bedGraph",
-                "methyldackel/SRR389222_sub2.deduplicated.sorted_CpG.bedGraph",
-                "methyldackel/SRR389222_sub3.deduplicated.sorted_CpG.bedGraph",
+                "methyldackel/Ecoli_10K_methylated.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub1.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub2.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub3.sorted_CpG.bedGraph",
                 "methyldackel/mbias",
                 "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
                 "methyldackel/mbias/SRR389222_sub1.mbias.txt",
@@ -2786,7 +2670,6 @@
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
-                "multiqc/bwameth/multiqc_data/BETA-multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/bwameth/multiqc_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -2803,6 +2686,7 @@
                 "multiqc/bwameth/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
                 "multiqc/bwameth/multiqc_data/llms-full.txt",
                 "multiqc/bwameth/multiqc_data/multiqc.log",
+                "multiqc/bwameth/multiqc_data/multiqc.parquet",
                 "multiqc/bwameth/multiqc_data/multiqc_citations.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_cutadapt.txt",
                 "multiqc/bwameth/multiqc_data/multiqc_data.json",
@@ -2822,7 +2706,6 @@
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/cutadapt_trimmed_sequences_plot_3_Obs_Exp.pdf",
-                "multiqc/bwameth/multiqc_plots/pdf/fastqc-status-check-heatmap.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_adapter_content_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_overrepresented_sequences_plot.pdf",
                 "multiqc/bwameth/multiqc_plots/pdf/fastqc_per_base_n_content_plot.pdf",
@@ -2844,7 +2727,6 @@
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
                 "multiqc/bwameth/multiqc_plots/png/cutadapt_trimmed_sequences_plot_3_Obs_Exp.png",
-                "multiqc/bwameth/multiqc_plots/png/fastqc-status-check-heatmap.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_adapter_content_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_overrepresented_sequences_plot.png",
                 "multiqc/bwameth/multiqc_plots/png/fastqc_per_base_n_content_plot.png",
@@ -2866,7 +2748,6 @@
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
                 "multiqc/bwameth/multiqc_plots/svg/cutadapt_trimmed_sequences_plot_3_Obs_Exp.svg",
-                "multiqc/bwameth/multiqc_plots/svg/fastqc-status-check-heatmap.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_adapter_content_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_overrepresented_sequences_plot.svg",
                 "multiqc/bwameth/multiqc_plots/svg/fastqc_per_base_n_content_plot.svg",
@@ -2886,6 +2767,7 @@
                 "multiqc/bwameth/multiqc_report.html",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
+                "pipeline_info/nf_core_methylseq_topic_versions.yml",
                 "trimgalore",
                 "trimgalore/fastqc",
                 "trimgalore/fastqc/Ecoli_10K_methylated_1_val_1_fastqc.html",
@@ -2908,17 +2790,17 @@
             ],
             [
                 "Ecoli_10K_methylated.flagstat:md5,c6a9a8b50c5e1d239071a8b75bc63b4f",
-                "Ecoli_10K_methylated.stats:md5,b0f5b95cf23935f12ccfcba960cc350f",
+                "Ecoli_10K_methylated.stats:md5,7a11b7c746dd231a3879545ba72478e0",
                 "SRR389222_sub1.flagstat:md5,cccae088e2f8686b890d019b60f63065",
-                "SRR389222_sub1.stats:md5,3ca5f1e6e587768302b3e1c54ea42121",
+                "SRR389222_sub1.stats:md5,71a786ffb2d4997c46512e06397d619a",
                 "SRR389222_sub2.flagstat:md5,403af1bed1e3e96f5e04d65e96728828",
-                "SRR389222_sub2.stats:md5,4b3589d2d54ec6fdc7fc4726723c698d",
+                "SRR389222_sub2.stats:md5,9b018290dcd1525f5de1d17549beccfe",
                 "SRR389222_sub3.flagstat:md5,73a5cb246f6388d5d449775d6e35f5fa",
-                "SRR389222_sub3.stats:md5,249976d67f53ea30f09f51d98b811f50",
-                "Ecoli_10K_methylated.deduplicated.sorted_CpG.bedGraph:md5,aa55074c144aa6eaa184480038c75932",
-                "SRR389222_sub1.deduplicated.sorted_CpG.bedGraph:md5,9e9e6922a8d99881874d299bfd7af5de",
-                "SRR389222_sub2.deduplicated.sorted_CpG.bedGraph:md5,d6c973d9fa7c6bc5f47141d14c18a105",
-                "SRR389222_sub3.deduplicated.sorted_CpG.bedGraph:md5,0ce36f42cc865eb59c7c6fd43d016d2c",
+                "SRR389222_sub3.stats:md5,5fce6a66ddfb494e56755f6dd517d9e9",
+                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,5e0bf8c8bb3162de75203784414a6399",
+                "SRR389222_sub1.sorted_CpG.bedGraph:md5,4475a9462ce86a019015b69b82a9d5a2",
+                "SRR389222_sub2.sorted_CpG.bedGraph:md5,18b8845d9d985d3c203ca6c9c40aab1b",
+                "SRR389222_sub3.sorted_CpG.bedGraph:md5,70dcc3836dc9721c2de367d1cf05e815",
                 "Ecoli_10K_methylated.mbias.txt:md5,7fb217502c2f3ae955bdfd744b6cbb72",
                 "SRR389222_sub1.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
                 "SRR389222_sub2.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
@@ -2940,35 +2822,35 @@
                 "multiqc_citations.txt:md5,ad6c1e326b4276501a3b42eaad747de1",
                 "multiqc_cutadapt.txt:md5,8752cce2e7320f49516e897c60487831",
                 "multiqc_samtools_flagstat.txt:md5,4389e377eb1db8dde26b0e8db6589c2d",
-                "multiqc_samtools_stats.txt:md5,b4e91ee865286567c1c3d9e7dbf00166",
+                "multiqc_samtools_stats.txt:md5,43600ec0c6685ef4a685fc6085aa7493",
                 "samtools-flagstat-pct-table.txt:md5,6b61188e70378467e23174bd12b1aaaa",
                 "samtools-flagstat-table.txt:md5,1491440de94dc58b28ca8f61d893a710",
-                "samtools-stats-dp.txt:md5,deab74e7245766aab6b2284492959fed",
+                "samtools-stats-dp.txt:md5,60a59e9ef0f79048c9a0d505fab58d03",
                 "samtools_alignment_plot.txt:md5,e10b792693e5a69776f623f5f7de647e"
             ],
             [
                 [
-                    "Ecoli_10K_methylated.deduplicated.sorted.bam",
+                    "Ecoli_10K_methylated.sorted.bam",
                     "8039fd2db60f8ca71daa444e62411f53"
                 ],
                 [
-                    "SRR389222_sub1.deduplicated.sorted.bam",
+                    "SRR389222_sub1.sorted.bam",
                     "a75ccc7cde779aac54662b03e5c01fe0"
                 ],
                 [
-                    "SRR389222_sub2.deduplicated.sorted.bam",
+                    "SRR389222_sub2.sorted.bam",
                     "82d2a7df2d4cb1ed2ea1e0456aff1cb"
                 ],
                 [
-                    "SRR389222_sub3.deduplicated.sorted.bam",
+                    "SRR389222_sub3.sorted.bam",
                     "7856b5549c566fb795c46f0674e069e1"
                 ]
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.0"
         },
-        "timestamp": "2025-08-10T06:54:26.674004248"
+        "timestamp": "2025-12-07T11:14:29.953154"
     }
 }

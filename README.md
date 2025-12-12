@@ -5,12 +5,13 @@
   </picture>
 </h1>
 
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open_In_GitHub_Codespaces-black?labelColor=grey&logo=github)](https://github.com/codespaces/new/nf-core/methylseq)
 [![GitHub Actions CI Status](https://github.com/nf-core/methylseq/actions/workflows/nf-test.yml/badge.svg)](https://github.com/nf-core/methylseq/actions/workflows/nf-test.yml)
 [![GitHub Actions Linting Status](https://github.com/nf-core/methylseq/actions/workflows/linting.yml/badge.svg)](https://github.com/nf-core/methylseq/actions/workflows/linting.yml)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/methylseq/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.1343417-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.1343417)
 [![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
-[![Nextflow](https://img.shields.io/badge/version-%E2%89%A524.10.5-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
-[![nf-core template version](https://img.shields.io/badge/nf--core_template-3.3.2-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/3.3.2)
+[![Nextflow](https://img.shields.io/badge/version-%E2%89%A525.04.0-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
+[![nf-core template version](https://img.shields.io/badge/nf--core_template-3.5.1-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/3.5.1)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
@@ -22,7 +23,7 @@
 
 **nf-core/methylseq** is a bioinformatics analysis pipeline used for Methylation (Bisulfite) sequencing data. It pre-processes raw data from FastQ inputs, aligns the reads and performs extensive quality-control on the results.
 
-![nf-core/methylseq metro map](docs/images/4.0.0_metromap.png)
+![nf-core/methylseq metro map](docs/images/4.2.0_metromap.png)
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It uses Docker / Singularity / Podman / Charliecloud / Apptainer containers making installation trivial and results highly reproducible.
 
@@ -32,26 +33,26 @@ On release, automated continuous integration tests run the pipeline on a full-si
 
 ## Pipeline Summary
 
-The pipeline allows you to choose between running either [Bismark](https://github.com/FelixKrueger/Bismark) or [bwa-meth](https://github.com/brentp/bwa-meth) / [MethylDackel](https://github.com/dpryan79/methyldackel).
+The pipeline allows you to choose between running either [Bismark](https://github.com/FelixKrueger/Bismark), [bwa-meth](https://github.com/brentp/bwa-meth) / [MethylDackel](https://github.com/dpryan79/methyldackel) or [BWA-Mem](https://github.com/lh3/bwa) plus [rastair](https://bitbucket.org/bsblabludwig/rastair/src/master/) for TAPS data processing. rastair can also be used with bwa-meth aligned reads by setting the aligner to `--aligner bwameth` and adding the flag `--taps`.
 
-Choose between workflows by using `--aligner bismark` (default, uses bowtie2 for alignment), `--aligner bismark_hisat` or `--aligner bwameth`. For higher performance, the pipeline can leverage the [Parabricks implementation of bwa-meth (fq2bammeth)](https://docs.nvidia.com/clara/parabricks/latest/documentation/tooldocs/man_fq2bam_meth.html), which implements the baseline tool `bwa-meth` in a performant method using fq2bam (BWA-MEM + GATK) as a backend for processing on GPU. To use this option, include the `gpu` profile along with `--aligner bwameth`.
+Choose between workflows by using `--aligner bismark` (default, uses bowtie2 for alignment), `--aligner bismark_hisat`, `--aligner bwameth` or `--aligner bwamem`. For higher performance, the pipeline can leverage the [Parabricks implementation of bwa-meth (fq2bammeth)](https://docs.nvidia.com/clara/parabricks/latest/documentation/tooldocs/man_fq2bam_meth.html) and the [Parabricks implementation of bwa-mem (fq2bammemh)](https://docs.nvidia.com/clara/parabricks/latest/documentation/tooldocs/man_fq2bam.html), which implement the baseline tools `bwa-meth` and `bwa-mem`. To use this option, include the `gpu` profile along with `--aligner bwameth` or `--aligner bwamem`.
 
 Note: For faster CPU runs with BWA-Meth, enable the BWA-MEM2 algorithm using `--use_mem2`. The GPU pathway (Parabricks) requires `-profile gpu` and a container runtime (Docker, Singularity, or Podman); Conda/Mamba are not supported for the GPU module.
 
-| Step                                         | Bismark workflow         | bwa-meth workflow     |
-| -------------------------------------------- | ------------------------ | --------------------- |
-| Generate Reference Genome Index _(optional)_ | Bismark                  | bwa-meth              |
-| Merge re-sequenced FastQ files               | cat                      | cat                   |
-| Raw data QC                                  | FastQC                   | FastQC                |
-| Adapter sequence trimming                    | Trim Galore!             | Trim Galore!          |
-| Align Reads                                  | Bismark (bowtie2/hisat2) | bwa-meth              |
-| Deduplicate Alignments                       | Bismark                  | Picard MarkDuplicates |
-| Extract methylation calls                    | Bismark                  | MethylDackel          |
-| Sample report                                | Bismark                  | -                     |
-| Summary Report                               | Bismark                  | -                     |
-| Alignment QC                                 | Qualimap _(optional)_    | Qualimap _(optional)_ |
-| Sample complexity                            | Preseq _(optional)_      | Preseq _(optional)_   |
-| Project Report                               | MultiQC                  | MultiQC               |
+| Step                                         | Bismark workflow         | bwa-meth workflow     | bwa-mem + TAPS workflow    |
+| -------------------------------------------- | ------------------------ | --------------------- | -------------------------- |
+| Generate Reference Genome Index _(optional)_ | Bismark                  | bwa-meth              | bwa index                  |
+| Merge re-sequenced FastQ files               | cat                      | cat                   | cat                        |
+| Raw data QC                                  | FastQC                   | FastQC                | FastQC                     |
+| Adapter sequence trimming                    | Trim Galore!             | Trim Galore!          | Trim Galore!               |
+| Align Reads                                  | Bismark (bowtie2/hisat2) | bwa-meth              | bwa mem                    |
+| Deduplicate Alignments                       | Bismark                  | Picard MarkDuplicates | Picard MarkDuplicates      |
+| Extract methylation calls                    | Bismark                  | MethylDackel          | TAPS subworkflow (rastair) |
+| Sample report                                | Bismark                  | -                     | -                          |
+| Summary Report                               | Bismark                  | -                     | -                          |
+| Alignment QC                                 | Qualimap _(optional)_    | Qualimap _(optional)_ | Qualimap _(optional)_      |
+| Sample complexity                            | Preseq _(optional)_      | Preseq _(optional)_   | Preseq _(optional)_        |
+| Project Report                               | MultiQC                  | MultiQC               | MultiQC                    |
 
 Optional targeted sequencing analysis is available via `--run_targeted_sequencing` and `--target_regions_file`; see the [usage documentation](https://nf-co.re/methylseq/usage) for details.
 
