@@ -14,11 +14,12 @@ process BWA_MEM {
     val   sort_bam
 
     output:
-    tuple val(meta), path("*.bam")  , emit: bam,    optional: true
-    tuple val(meta), path("*.cram") , emit: cram,   optional: true
-    tuple val(meta), path("*.csi")  , emit: csi,    optional: true
-    tuple val(meta), path("*.crai") , emit: crai,   optional: true
-    path  "versions.yml"            , emit: versions
+    tuple val(meta), path("*.bam")                     , emit: bam,                 optional: true
+    tuple val(meta), path("*.cram")                    , emit: cram,                optional: true
+    tuple val(meta), path("*.csi")                     , emit: csi,                 optional: true
+    tuple val(meta), path("*.crai")                    , emit: crai,                optional: true
+    tuple val(meta), path("*.nonconverted_counts.tsv") , emit: nonconverted_counts, optional: true
+    path  "versions.yml"                               , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -34,6 +35,7 @@ process BWA_MEM {
                     !sort_bam && args2.contains("-C")    ? "cram":
                     "bam"
     def reference = fasta && extension=="cram"  ? "--reference ${fasta}" : ""
+    def mnc_pipe  = fasta ? "| mark-nonconverted-reads.py --reference ${fasta} 2> '${prefix}.nonconverted_counts.tsv'" : ""
     if (!fasta && extension=="cram") error "Fasta reference is required for CRAM output"
     """
     INDEX=`find -L ./ -name "*.amb" | sed 's/\\.amb\$//'`
@@ -43,6 +45,7 @@ process BWA_MEM {
         -t $task.cpus \\
         \$INDEX \\
         $reads \\
+        ${mnc_pipe} \\
         | samtools $samtools_command $args2 ${reference} --threads $task.cpus -o ${prefix}.${extension} -
 
     cat <<-END_VERSIONS > versions.yml

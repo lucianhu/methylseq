@@ -11,3 +11,4 @@ dependencies:
   - bioconda::htslib=1.22.1
   # renovate: datasource=conda depName=bioconda/samtools
   - bioconda::samtools=1.22.1
+  - bioconda::mark-nonconverted-reads=1.2

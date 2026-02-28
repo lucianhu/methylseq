@@ -5,3 +5,4 @@ channels:
   - bioconda
 dependencies:
   - bioconda::bwameth=0.2.9
+  - bioconda::mark-nonconverted-reads=1.2

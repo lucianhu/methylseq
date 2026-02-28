@@ -13,8 +13,9 @@ process BWAMETH_ALIGN {
     tuple val(meta3), path(index)
 
     output:
-    tuple val(meta), path("*.bam"), emit: bam
-    path  "versions.yml"          , emit: versions
+    tuple val(meta), path("*.bam"),                      emit: bam
+    tuple val(meta), path("*.nonconverted_counts.tsv"),  emit: nonconverted_counts
+    path  "versions.yml"                               , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -34,6 +35,7 @@ process BWAMETH_ALIGN {
         -t ${task.cpus} \\
         --reference ${index}/${fasta} \\
         ${reads} \\
+        | mark-nonconverted-reads.py --reference ${index}/${fasta} 2> "${prefix}.nonconverted_counts.tsv" \\
         | samtools view ${args2} -@ ${task.cpus} -bhS -o ${prefix}.bam -
 
     cat <<-END_VERSIONS > versions.yml
@@ -46,6 +48,7 @@ process BWAMETH_ALIGN {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}.bam
+    touch ${prefix}.nonconverted_counts.tsv
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
