@@ -23,9 +23,11 @@ process METHYLDACKEL_EXTRACT {
 
     script:
     def args = task.ext.args ?: ''
+    def extra_params = task.ext.args2 ?: ''
     """
     MethylDackel extract \\
         $args \\
+        $extra_params \\
         $fasta \\
         $bam
 
