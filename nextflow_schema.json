@@ -427,6 +427,12 @@
                     "description": "Save files for use with methylKit",
                     "help_text": "Run MethylDackel with the `--methyl_kit` option, to produce files suitable for use with the methylKit R package.",
                     "fa_icon": "fas fa-ellipsis-h"
+                },
+                "extra_methyldackel_args": {
+                    "type": "string",
+                    "description": "Extra arguments to pass to MethylDackel extract.",
+                    "help_text": "Additional command-line arguments passed directly to `MethylDackel extract`, e.g. `-q 20 --nOT 0,0,0,5 --nOB 0,0,5,0`.",
+                    "fa_icon": "fas fa-plus"
                 }
             },
             "fa_icon": "far fa-circle"
