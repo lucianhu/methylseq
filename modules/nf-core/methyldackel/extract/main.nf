@@ -24,7 +24,8 @@ process METHYLDACKEL_EXTRACT {
 
     script:
     def args = task.ext.args ?: ''
-    def base_args = args.replaceAll('--methylKit', '').replaceAll('--cytosine_report', '').trim()
+    def base_args = args.replaceAll('--methylKit', '').replaceAll('--cytosine_report', '').replaceAll('\\s+', ' ').trim()
+    def base_args_no_merge = base_args.replaceAll('--mergeContext', '').replaceAll('\\s+', ' ').trim()
     """
     # Run 1: bedGraph (default)
     MethylDackel extract \\
@@ -32,17 +33,17 @@ process METHYLDACKEL_EXTRACT {
         $fasta \\
         $bam
 
-    # Run 2: methylKit format
+    # Run 2: methylKit format (incompatible with --mergeContext)
     MethylDackel extract \\
         --methylKit \\
-        ${base_args} \\
+        ${base_args_no_merge} \\
         $fasta \\
         $bam
 
-    # Run 3: cytosine_report
+    # Run 3: cytosine_report (incompatible with --mergeContext)
     MethylDackel extract \\
         --cytosine_report \\
-        ${base_args} \\
+        ${base_args_no_merge} \\
         $fasta \\
         $bam
 
