@@ -428,17 +428,17 @@
                     "help_text": "Additional command-line arguments passed directly to `MethylDackel extract`, e.g. `-q 20 --nOT 0,0,0,5 --nOB 0,0,5,0`.",
                     "fa_icon": "fas fa-plus"
                 },
-                "extra_methyldackel_mbias_args": {
-                    "type": "string",
-                    "description": "Extra arguments to pass to MethylDackel mbias.",
-                    "help_text": "Additional command-line arguments passed directly to `MethylDackel mbias`.",
-                    "fa_icon": "fas fa-plus"
-                },
                 "methyldackel_mbias_regions": {
                     "type": "string",
                     "description": "BED file to restrict MethylDackel mbias to specific regions.",
                     "help_text": "Path to a BED file passed to MethylDackel mbias via the `-l` option.",
                     "fa_icon": "fas fa-map-marker-alt"
+                },
+                "extra_methyldackel_mbias_args": {
+                    "type": "string",
+                    "description": "Extra arguments to pass to MethylDackel mbias.",
+                    "help_text": "Additional command-line arguments passed directly to `MethylDackel mbias`.",
+                    "fa_icon": "fas fa-plus"
                 }
             },
             "fa_icon": "far fa-circle"
