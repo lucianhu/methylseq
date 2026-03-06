@@ -24,14 +24,35 @@ process METHYLDACKEL_MBIAS {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
+    def run_all_contexts = task.ext.all_contexts ? 'true' : 'false'
     """
     MethylDackel mbias \\
         $args \\
         $fasta \\
         $bam \\
-        $prefix \\
+        ${prefix}_CpG \\
         --txt \\
-        > ${prefix}.mbias.txt
+        > ${prefix}_CpG.mbias.txt
+
+    if [[ "${run_all_contexts}" == "true" ]]; then
+        MethylDackel mbias \\
+            $args \\
+            --CHG --noCpG \\
+            $fasta \\
+            $bam \\
+            ${prefix}_CHG \\
+            --txt \\
+            > ${prefix}_CHG.mbias.txt
+
+        MethylDackel mbias \\
+            $args \\
+            --CHH --noCpG \\
+            $fasta \\
+            $bam \\
+            ${prefix}_CHH \\
+            --txt \\
+            > ${prefix}_CHH.mbias.txt
+    fi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -41,10 +62,20 @@ process METHYLDACKEL_MBIAS {
 
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
+    def run_all_contexts = task.ext.all_contexts ? 'true' : 'false'
     """
-    touch ${prefix}.mbias.txt
-    touch ${prefix}_OT.svg
-    touch ${prefix}_OB.svg
+    touch ${prefix}_CpG.mbias.txt
+    touch ${prefix}_CpG_OT.svg
+    touch ${prefix}_CpG_OB.svg
+
+    if [[ "${run_all_contexts}" == "true" ]]; then
+        touch ${prefix}_CHG.mbias.txt
+        touch ${prefix}_CHG_OT.svg
+        touch ${prefix}_CHG_OB.svg
+        touch ${prefix}_CHH.mbias.txt
+        touch ${prefix}_CHH_OT.svg
+        touch ${prefix}_CHH_OB.svg
+    fi
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

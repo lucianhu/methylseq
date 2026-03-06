@@ -398,17 +398,11 @@
             "description": "Parameters specific to MethylDackel methylation calling step",
             "default": "",
             "properties": {
-                "extract_all_contexts": {
+                "all_contexts": {
                     "type": "boolean",
-                    "description": "MethylDackel extract: call methylation in all CpG, CHG and CHH contexts.",
-                    "help_text": "Sets MethylDackel extract to run with `--CHH` and `--CHG`.",
+                    "description": "Call methylation in all three CpG, CHG and CHH contexts.",
+                    "help_text": "By default MethylDackel calls methylation just in the CpG context. The `--all_contexts` parameter sets MethylDackel to run with options `--CHH` and `--CHG` to call methylation in all three contexts.",
                     "fa_icon": "fas fa-ellipsis-h"
-                },
-                "ignore_flags": {
-                    "type": "boolean",
-                    "description": "MethylDackel - ignore SAM flags",
-                    "fa_icon": "fas fa-eye-slash",
-                    "help_text": "Run MethylDackel with the `--ignoreFlags` option, to ignore SAM flags."
                 },
                 "merge_context": {
                     "type": "boolean",
@@ -422,17 +416,11 @@
                     "default": 0,
                     "fa_icon": "fas fa-angle-double-down"
                 },
-                "mbias_all_contexts": {
+                "ignore_flags": {
                     "type": "boolean",
-                    "description": "MethylDackel mbias: call methylation in all CpG, CHG and CHH contexts.",
-                    "help_text": "Sets MethylDackel mbias to run with `--CHH` and `--CHG`.",
-                    "fa_icon": "fas fa-ellipsis-h"
-                },
-                "methyldackel_mbias_regions": {
-                    "type": "string",
-                    "description": "BED file to restrict MethylDackel mbias to specific regions.",
-                    "help_text": "Path to a BED file passed to MethylDackel mbias via the `-l` option.",
-                    "fa_icon": "fas fa-map-marker-alt"
+                    "description": "MethylDackel - ignore SAM flags",
+                    "fa_icon": "fas fa-eye-slash",
+                    "help_text": "Run MethylDackel with the `--ignore_flags` option, to ignore SAM flags."
                 },
                 "extra_methyldackel_args": {
                     "type": "string",
@@ -445,6 +433,12 @@
                     "description": "Extra arguments to pass to MethylDackel mbias.",
                     "help_text": "Additional command-line arguments passed directly to `MethylDackel mbias`.",
                     "fa_icon": "fas fa-plus"
+                },
+                "methyldackel_mbias_regions": {
+                    "type": "string",
+                    "description": "BED file to restrict MethylDackel mbias to specific regions.",
+                    "help_text": "Path to a BED file passed to MethylDackel mbias via the `-l` option.",
+                    "fa_icon": "fas fa-map-marker-alt"
                 }
             },
             "fa_icon": "far fa-circle"
