@@ -54,8 +54,9 @@ workflow METHYLSEQ {
     ch_aligner_mqc   = channel.empty()
     ch_rastair_mbias = channel.empty()
     ch_rastair_call  = channel.empty()
-    ch_methylkit     = channel.empty()
-    ch_mbias         = channel.empty()
+    ch_methylkit        = channel.empty()
+    ch_cytosine_report  = channel.empty()
+    ch_mbias            = channel.empty()
     ch_qualimap      = channel.empty()
     ch_preseq        = channel.empty()
     ch_multiqc_files = channel.empty()
@@ -251,10 +252,11 @@ workflow METHYLSEQ {
             ch_methyldackel_inputs.fasta,
             ch_methyldackel_inputs.fasta_index
         )
-        ch_bedgraph    = BAM_METHYLDACKEL.out.methydackel_extract_bedgraph  // channel: [ val(meta), [ bedgraph ]  ]
-        ch_methylkit   = BAM_METHYLDACKEL.out.methydackel_extract_methylkit // channel: [ val(meta), [ methylkit ] ]
-        ch_mbias       = BAM_METHYLDACKEL.out.methydackel_mbias // channel: [ val(meta), [ mbias ] ]
-        ch_versions    = ch_versions.mix(BAM_METHYLDACKEL.out.versions)
+        ch_bedgraph        = BAM_METHYLDACKEL.out.methydackel_extract_bedgraph        // channel: [ val(meta), [ bedgraph ]        ]
+        ch_methylkit       = BAM_METHYLDACKEL.out.methydackel_extract_methylkit       // channel: [ val(meta), [ methylkit ]       ]
+        ch_cytosine_report = BAM_METHYLDACKEL.out.methydackel_extract_cytosine_report // channel: [ val(meta), [ cytosine_report ] ]
+        ch_mbias           = BAM_METHYLDACKEL.out.methydackel_mbias                   // channel: [ val(meta), [ mbias ]           ]
+        ch_versions        = ch_versions.mix(BAM_METHYLDACKEL.out.versions)
     }
 
     //
@@ -401,9 +403,10 @@ workflow METHYLSEQ {
     bai            = ch_bai                      // channel: [ val(meta), path(bai) ]
     rastair_mbias  = ch_rastair_mbias            // channel: [ val(meta), path(rastair_mbias) ]
     rastair_call   = ch_rastair_call             // channel: [ val(meta), path(rastair_call) ]
-    methylkit      = ch_methylkit                 // channel: [ val(meta), path(methylkit) ]
-    mbias          = ch_mbias                     // channel: [ val(meta), path(mbias) ]
-    bedgraph       = ch_bedgraph                  // channel: [ val(meta), path(bedgraph) ]
+    methylkit        = ch_methylkit                // channel: [ val(meta), path(methylkit) ]
+    cytosine_report  = ch_cytosine_report          // channel: [ val(meta), path(cytosine_report) ]
+    mbias            = ch_mbias                    // channel: [ val(meta), path(mbias) ]
+    bedgraph         = ch_bedgraph                 // channel: [ val(meta), path(bedgraph) ]
     qualimap       = ch_qualimap                 // channel: [ val(meta), path(qualimap) ]
     preseq         = ch_preseq                   // channel: [ val(meta), path(preseq) ]
     multiqc_report = ch_multiqc_report            // channel: [ path(multiqc_report.html )  ]

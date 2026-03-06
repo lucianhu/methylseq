@@ -14,18 +14,35 @@ process METHYLDACKEL_EXTRACT {
     tuple val(meta4), path(fai)
 
     output:
-    tuple val(meta), path("*.bedGraph") , optional: true, emit: bedgraph
-    tuple val(meta), path("*.methylKit"), optional: true, emit: methylkit
-    path  "versions.yml"                                , emit: versions
+    tuple val(meta), path("*.bedGraph")             , optional: true, emit: bedgraph
+    tuple val(meta), path("*.methylKit")            , optional: true, emit: methylkit
+    tuple val(meta), path("*_cytosine_report.txt")  , optional: true, emit: cytosine_report
+    path  "versions.yml"                            , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
 
     script:
     def args = task.ext.args ?: ''
+    def base_args = args.replaceAll('--methylKit', '').replaceAll('--cytosine_report', '').trim()
     """
+    # Run 1: bedGraph (default)
     MethylDackel extract \\
-        $args \\
+        ${base_args} \\
+        $fasta \\
+        $bam
+
+    # Run 2: methylKit format
+    MethylDackel extract \\
+        --methylKit \\
+        ${base_args} \\
+        $fasta \\
+        $bam
+
+    # Run 3: cytosine_report
+    MethylDackel extract \\
+        --cytosine_report \\
+        ${base_args} \\
         $fasta \\
         $bam
 
@@ -37,9 +54,10 @@ process METHYLDACKEL_EXTRACT {
 
     stub:
     def args = task.ext.args ?: ''
-    def out_extension = args.contains('--methylKit') ? 'methylKit' : 'bedGraph'
     """
-    touch ${bam.baseName}_CpG.${out_extension}
+    touch ${bam.baseName}_CpG.bedGraph
+    touch ${bam.baseName}_CpG.methylKit
+    touch ${bam.baseName}_CpG_cytosine_report.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

@@ -15,6 +15,7 @@ process METHYLDACKEL_MBIAS {
 
     output:
     tuple val(meta), path("*.mbias.txt"), emit: txt
+    tuple val(meta), path("*.svg")      , optional: true, emit: svg
     path  "versions.yml"                , emit: versions
 
     when:
@@ -42,6 +43,8 @@ process METHYLDACKEL_MBIAS {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}.mbias.txt
+    touch ${prefix}_OT.svg
+    touch ${prefix}_OB.svg
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

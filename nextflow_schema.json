@@ -398,11 +398,17 @@
             "description": "Parameters specific to MethylDackel methylation calling step",
             "default": "",
             "properties": {
-                "all_contexts": {
+                "extract_all_contexts": {
                     "type": "boolean",
-                    "description": "Call methylation in all three CpG, CHG and CHH contexts.",
-                    "help_text": "By default MethylDackel calls methylation just in the CpG context. The `--all_contexts` parameter sets MethylDackel to run with options `--CHH` and `--CHG` to call methylation in all three contexts.",
+                    "description": "MethylDackel extract: call methylation in all CpG, CHG and CHH contexts.",
+                    "help_text": "Sets MethylDackel extract to run with `--CHH` and `--CHG`.",
                     "fa_icon": "fas fa-ellipsis-h"
+                },
+                "ignore_flags": {
+                    "type": "boolean",
+                    "description": "MethylDackel - ignore SAM flags",
+                    "fa_icon": "fas fa-eye-slash",
+                    "help_text": "Run MethylDackel with the `--ignoreFlags` option, to ignore SAM flags."
                 },
                 "merge_context": {
                     "type": "boolean",
@@ -416,22 +422,28 @@
                     "default": 0,
                     "fa_icon": "fas fa-angle-double-down"
                 },
-                "ignore_flags": {
+                "mbias_all_contexts": {
                     "type": "boolean",
-                    "description": "MethylDackel - ignore SAM flags",
-                    "fa_icon": "fas fa-eye-slash",
-                    "help_text": "Run MethylDackel with the `--ignore_flags` option, to ignore SAM flags."
-                },
-                "methyl_kit": {
-                    "type": "boolean",
-                    "description": "Save files for use with methylKit",
-                    "help_text": "Run MethylDackel with the `--methyl_kit` option, to produce files suitable for use with the methylKit R package.",
+                    "description": "MethylDackel mbias: call methylation in all CpG, CHG and CHH contexts.",
+                    "help_text": "Sets MethylDackel mbias to run with `--CHH` and `--CHG`.",
                     "fa_icon": "fas fa-ellipsis-h"
+                },
+                "methyldackel_mbias_regions": {
+                    "type": "string",
+                    "description": "BED file to restrict MethylDackel mbias to specific regions.",
+                    "help_text": "Path to a BED file passed to MethylDackel mbias via the `-l` option.",
+                    "fa_icon": "fas fa-map-marker-alt"
                 },
                 "extra_methyldackel_args": {
                     "type": "string",
                     "description": "Extra arguments to pass to MethylDackel extract.",
                     "help_text": "Additional command-line arguments passed directly to `MethylDackel extract`, e.g. `-q 20 --nOT 0,0,0,5 --nOB 0,0,5,0`.",
+                    "fa_icon": "fas fa-plus"
+                },
+                "extra_methyldackel_mbias_args": {
+                    "type": "string",
+                    "description": "Extra arguments to pass to MethylDackel mbias.",
+                    "help_text": "Additional command-line arguments passed directly to `MethylDackel mbias`.",
                     "fa_icon": "fas fa-plus"
                 }
             },

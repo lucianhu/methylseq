@@ -10,11 +10,12 @@ workflow BAM_METHYLDACKEL {
     ch_fasta_index          // channel: [ val(meta), [ fasta index ] ]
 
     main:
-    ch_methydackel_extract_bedgraph  = Channel.empty()
-    ch_methydackel_extract_methylkit = Channel.empty()
-    ch_methydackel_mbias             = Channel.empty()
-    ch_multiqc_files                 = Channel.empty()
-    ch_versions                      = Channel.empty()
+    ch_methydackel_extract_bedgraph        = Channel.empty()
+    ch_methydackel_extract_methylkit       = Channel.empty()
+    ch_methydackel_extract_cytosine_report = Channel.empty()
+    ch_methydackel_mbias                   = Channel.empty()
+    ch_multiqc_files                       = Channel.empty()
+    ch_versions                            = Channel.empty()
 
     /*
      * Extract per-base methylation and plot methylation bias
@@ -26,9 +27,10 @@ workflow BAM_METHYLDACKEL {
         ch_fasta,
         ch_fasta_index
     )
-    ch_methydackel_extract_bedgraph  = METHYLDACKEL_EXTRACT.out.bedgraph
-    ch_methydackel_extract_methylkit = METHYLDACKEL_EXTRACT.out.methylkit
-    ch_versions                      = ch_versions.mix(METHYLDACKEL_EXTRACT.out.versions)
+    ch_methydackel_extract_bedgraph        = METHYLDACKEL_EXTRACT.out.bedgraph
+    ch_methydackel_extract_methylkit       = METHYLDACKEL_EXTRACT.out.methylkit
+    ch_methydackel_extract_cytosine_report = METHYLDACKEL_EXTRACT.out.cytosine_report
+    ch_versions                            = ch_versions.mix(METHYLDACKEL_EXTRACT.out.versions)
 
     METHYLDACKEL_MBIAS (
         ch_alignment,
@@ -47,9 +49,10 @@ workflow BAM_METHYLDACKEL {
                         .mix(ch_methydackel_mbias.collect{ meta, txt -> txt  })
 
     emit:
-    methydackel_extract_bedgraph  = ch_methydackel_extract_bedgraph  // channel: [ val(meta), [ bedgraph ]  ]
-    methydackel_extract_methylkit = ch_methydackel_extract_methylkit // channel: [ val(meta), [ methylkit ] ]
-    methydackel_mbias             = ch_methydackel_mbias             // channel: [ val(meta), [ mbias ]     ]
-    multiqc                       = ch_multiqc_files                 // channel: [ *{html,txt}              ]
-    versions                      = ch_versions                      // channel: [ versions.yml             ]
+    methydackel_extract_bedgraph        = ch_methydackel_extract_bedgraph        // channel: [ val(meta), [ bedgraph ]        ]
+    methydackel_extract_methylkit       = ch_methydackel_extract_methylkit       // channel: [ val(meta), [ methylkit ]       ]
+    methydackel_extract_cytosine_report = ch_methydackel_extract_cytosine_report // channel: [ val(meta), [ cytosine_report ] ]
+    methydackel_mbias                   = ch_methydackel_mbias                   // channel: [ val(meta), [ mbias ]           ]
+    multiqc                             = ch_multiqc_files                       // channel: [ *{html,txt}                    ]
+    versions                            = ch_versions                            // channel: [ versions.yml                   ]
 }
