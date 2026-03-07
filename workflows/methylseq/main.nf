@@ -50,7 +50,7 @@ workflow METHYLSEQ {
     ch_reads         = channel.empty()
     ch_bam           = channel.empty()
     ch_bai           = channel.empty()
-    ch_gzi           = channel.empty()
+    ch_gzi           = Channel.of([[:], []])
     ch_bedgraph      = channel.empty()
     ch_aligner_mqc   = channel.empty()
     ch_rastair_mbias = channel.empty()
