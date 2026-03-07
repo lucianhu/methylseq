@@ -485,6 +485,13 @@
                     "description": "A GFF or BED file containing the target regions which will be passed to Qualimap/Bamqc.",
                     "help_text": "Setting this option could be useful if you want calculate coverage stats over a list of regions, i.e. for targeted methylation sequencing data.",
                     "fa_icon": "fas fa-file"
+                },
+                "qualimap_skip_duplicates": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Skip flagged duplicate reads in Qualimap BamQC analysis.",
+                    "help_text": "Activates the Qualimap `-sd` option to skip duplicate alignments (flagged with 0x400) from the analysis. Recommended when using Picard MarkDuplicates with REMOVE_DUPLICATES=false.",
+                    "fa_icon": "fas fa-clone"
                 }
             }
         },
