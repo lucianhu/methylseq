@@ -7,7 +7,8 @@
 include { paramsSummaryMap              } from 'plugin/nf-schema'
 include { FASTQC                        } from '../../modules/nf-core/fastqc/main'
 include { TRIMGALORE                    } from '../../modules/nf-core/trimgalore/main'
-include { QUALIMAP_BAMQC                } from '../../modules/nf-core/qualimap/bamqc/main'
+include { QUALIMAP_BAMQC as QUALIMAP_BAMQC_GENOME  } from '../../modules/nf-core/qualimap/bamqc/main'
+include { QUALIMAP_BAMQC as QUALIMAP_BAMQC_REGIONS } from '../../modules/nf-core/qualimap/bamqc/main'
 include { PRESEQ_LCEXTRAP               } from '../../modules/nf-core/preseq/lcextrap/main'
 include { MULTIQC                       } from '../../modules/nf-core/multiqc/main'
 include { CAT_FASTQ                     } from '../../modules/nf-core/cat/fastq/main'
@@ -57,7 +58,8 @@ workflow METHYLSEQ {
     ch_methylkit        = channel.empty()
     ch_cytosine_report  = channel.empty()
     ch_mbias            = channel.empty()
-    ch_qualimap      = channel.empty()
+    ch_qualimap_genome  = channel.empty()
+    ch_qualimap_regions = channel.empty()
     ch_preseq        = channel.empty()
     ch_multiqc_files = channel.empty()
 
@@ -264,12 +266,21 @@ workflow METHYLSEQ {
     // skipped by default. to use run with `--run_qualimap` param.
     //
     if(params.run_qualimap) {
-        QUALIMAP_BAMQC (
+        QUALIMAP_BAMQC_GENOME (
             ch_bam,
-            params.bamqc_regions_file ? channel.fromPath( params.bamqc_regions_file, checkIfExists: true ).toList() : []
+            []
         )
-        ch_qualimap = QUALIMAP_BAMQC.out.results
-        ch_versions = ch_versions.mix(QUALIMAP_BAMQC.out.versions)
+        ch_qualimap_genome = QUALIMAP_BAMQC_GENOME.out.results
+        ch_versions        = ch_versions.mix(QUALIMAP_BAMQC_GENOME.out.versions)
+
+        if (params.bamqc_regions_file) {
+            QUALIMAP_BAMQC_REGIONS (
+                ch_bam,
+                channel.fromPath( params.bamqc_regions_file, checkIfExists: true ).toList()
+            )
+            ch_qualimap_regions = QUALIMAP_BAMQC_REGIONS.out.results
+            ch_versions         = ch_versions.mix(QUALIMAP_BAMQC_REGIONS.out.versions)
+        }
     }
 
     //
@@ -367,7 +378,8 @@ workflow METHYLSEQ {
         )
 
         if(params.run_qualimap) {
-            ch_multiqc_files = ch_multiqc_files.mix(QUALIMAP_BAMQC.out.results.collect{ it[1] }.ifEmpty([]))
+            ch_multiqc_files = ch_multiqc_files.mix(QUALIMAP_BAMQC_GENOME.out.results.collect{ it[1] }.ifEmpty([]))
+            ch_multiqc_files = ch_multiqc_files.mix(QUALIMAP_BAMQC_REGIONS.out.results.collect{ it[1] }.ifEmpty([]))
         }
         if (params.run_preseq) {
             ch_multiqc_files = ch_multiqc_files.mix(PRESEQ_LCEXTRAP.out.log.collect{ it[1] }.ifEmpty([]))
@@ -407,7 +419,8 @@ workflow METHYLSEQ {
     cytosine_report  = ch_cytosine_report          // channel: [ val(meta), path(cytosine_report) ]
     mbias            = ch_mbias                    // channel: [ val(meta), path(mbias) ]
     bedgraph         = ch_bedgraph                 // channel: [ val(meta), path(bedgraph) ]
-    qualimap       = ch_qualimap                 // channel: [ val(meta), path(qualimap) ]
+    qualimap_genome  = ch_qualimap_genome          // channel: [ val(meta), path(qualimap) ]
+    qualimap_regions = ch_qualimap_regions         // channel: [ val(meta), path(qualimap) ]
     preseq         = ch_preseq                   // channel: [ val(meta), path(preseq) ]
     multiqc_report = ch_multiqc_report            // channel: [ path(multiqc_report.html )  ]
     versions       = ch_versions                 // channel: [ path(versions.yml) ]
