@@ -16,7 +16,7 @@ process METHYLDACKEL_EXTRACT {
     output:
     tuple val(meta), path("*.bedGraph")             , optional: true, emit: bedgraph
     tuple val(meta), path("*.methylKit")            , optional: true, emit: methylkit
-    tuple val(meta), path("*_cytosine_report.txt")  , optional: true, emit: cytosine_report
+    tuple val(meta), path("*.cytosine_report.txt")  , optional: true, emit: cytosine_report
     path  "versions.yml"                            , emit: versions
 
     when:
@@ -58,7 +58,7 @@ process METHYLDACKEL_EXTRACT {
     """
     touch ${bam.baseName}_CpG.bedGraph
     touch ${bam.baseName}_CpG.methylKit
-    touch ${bam.baseName}_CpG_cytosine_report.txt
+    touch ${bam.baseName}.cytosine_report.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
