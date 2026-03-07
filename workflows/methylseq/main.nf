@@ -382,7 +382,7 @@ workflow METHYLSEQ {
             ch_multiqc_files = ch_multiqc_files.mix(QUALIMAP_BAMQC_REGIONS.out.results.collect{ it[1] }.ifEmpty([]))
         }
         if (params.run_preseq) {
-            ch_multiqc_files = ch_multiqc_files.mix(PRESEQ_LCEXTRAP.out.log.collect{ it[1] }.ifEmpty([]))
+            ch_multiqc_files = ch_multiqc_files.mix(PRESEQ_LCEXTRAP.out.lc_extrap.collect{ it[1] }.ifEmpty([]))
         }
         ch_multiqc_files = ch_multiqc_files.mix(ch_aligner_mqc.ifEmpty([]))
         if (!params.skip_trimming) {

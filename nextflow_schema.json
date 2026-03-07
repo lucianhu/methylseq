@@ -422,6 +422,18 @@
                     "fa_icon": "fas fa-eye-slash",
                     "help_text": "Run MethylDackel with the `--ignore_flags` option, to ignore SAM flags."
                 },
+                "methyl_kit": {
+                    "type": "boolean",
+                    "description": "Save files for use with methylKit",
+                    "help_text": "Run MethylDackel with the `--methyl_kit` option, to produce files suitable for use with the methylKit R package.",
+                    "fa_icon": "fas fa-ellipsis-h"
+                },
+                "cytosine_report_methyldackel": {
+                    "type": "boolean",
+                    "description": "Output stranded cytosine report, following the MethylDackel extract step.",
+                    "help_text": "When enabled, MethylDackel extract is run with the `--cytosine_report` flag to produce a genome-wide cytosine methylation report. With this option, the output considers all Cs on both forward and reverse strands and reports their position, strand, trinucleotide context and methylation state.",
+                    "fa_icon": "fas fa-clipboard"
+                },
                 "extra_methyldackel_args": {
                     "type": "string",
                     "description": "Extra arguments to pass to MethylDackel extract.",
